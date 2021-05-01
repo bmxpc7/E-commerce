@@ -1,0 +1,60 @@
+.navbar{
+  height: 70px;
+}
+.contenidoPrincipal{
+  margin-top: 5em;
+  margin-left: 1em;
+  width: 1000px;
+}
+
+.page-footer{
+  
+  background: rgb(255,136,2);
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+  .footer{
+    color: black;
+  }
+}
+
+.modal-header{
+  background: rgb(255,136,2);
+  color: white;
+}
+
+.modal-body{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn{
+  background: rgb(255,136,2);
+}
+
+.form-control{
+  border-color: rgb(255,136,2);
+  border-width: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo{
+    width: 30px;
+  }
+  .navbar{
+    height: 50px;
+  }
+.contenidoPrincipal{
+  width: 100%;
+}
+  #modalLogin{
+    margin: 3%;
+    width: 30%;
+  }
+  .cardPieza{
+    width: 10em;
+  }
+}
