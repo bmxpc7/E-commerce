@@ -18,8 +18,9 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
 
       <!-- Brand -->
@@ -58,6 +59,12 @@
             <a class="nav-link waves-effect btnIniciar">
               <i class="fas fa-user btnIniciar"></i>
               <span class="clearfix d-none d-sm-inline-block" class="btnIniciar"> Iniciar Sesión </span>
+            </a>
+          </li>
+          <li class="nav-item btnIniciar">
+            <a href="/E-commerce/vistas/perfil.php" class="nav-link waves-effect btnIniciar">
+              <i class="fas fa-address-card btnIniciar"></i>
+              <span class="clearfix d-none d-sm-inline-block" class="btnIniciar">Perfil</span>
             </a>
           </li>
           <form class="form-inline">
@@ -115,6 +122,8 @@
     <input type="password" class="form-control" id="txtPass">
   </div>
   <button type="submit" class="btn btn-warning text-dark">Iniciar Sesión</button>
+  <hr>
+  <p>¿No tienes cuenta? <a href="/E-commerce/vistas/registro.php" style="color:blue">Registrate</a></p>
         </form>
       </div>
     </div>

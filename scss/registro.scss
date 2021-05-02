@@ -1,0 +1,45 @@
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ladoIzquierdo{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ladoDerecho{
+    width: 50%;
+}
+.btn{
+    background: rgb(255,136,2);
+    color: white;
+    margin-left: 20%;
+  }
+  
+  .form-control{
+     border-color: rgb(255,136,2);
+     border-width: 1.5px;
+  }
+  .imagen{
+      margin-top: 25%;
+      width: 100%;
+  }
+
+  .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: rgb(255,136,2);
+    border-width: 2px;
+    width: 18em;
+  }
+
+  .card-body{
+      margin-bottom: -50px;
+  }
+  .logoForm{
+      width: 60px;
+      margin-left: 35%;
+  }
