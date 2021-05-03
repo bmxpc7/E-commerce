@@ -105,7 +105,7 @@
     <label for="txtDireccion">Direccion</label>
     <textarea type="text" class="form-control" id="txtDireccion" cols="20" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn">Registrar</button>
+  <button type="submit" class="btn">Actualizar Información</button>
       </form>
   </div>
 </div>

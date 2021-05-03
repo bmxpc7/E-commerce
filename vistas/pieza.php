@@ -73,6 +73,15 @@
   </nav>
   <!--Main layout-->
   <main class="mt-5 pt-4">
+    
+<?php 
+require_once "../controladores/pieza.controlador.php";
+$id= htmlspecialchars($_GET["id"]);
+$mostrarPieza = new ControladorRegi();
+$mostrarPieza -> ctrCrearCliente();
+  
+?>
+
     <div class="container dark-grey-text mt-5">
 
       <!--Grid row-->
@@ -92,26 +101,11 @@
           <!--Content-->
           <div class="p-4">
 
-            <div class="mb-3">
-              <a href="">
-                <span class="badge purple mr-1">Category 2</span>
-              </a>
-              <a href="">
-                <span class="badge blue mr-1">New</span>
-              </a>
-              <a href="">
-                <span class="badge red mr-1">Bestseller</span>
-              </a>
-            </div>
-
             <p class="lead">
-              <span class="mr-1">
-                <del>$200</del>
-              </span>
               <span>$100</span>
             </p>
 
-            <p class="lead font-weight-bold">Description</p>
+            <p class="lead font-weight-bold">Descripción</p>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
               sint voluptatibus!
@@ -143,11 +137,7 @@
         <!--Grid column-->
         <div class="col-md-6 text-center">
 
-          <h4 class="my-4 h4">Additional information</h4>
-
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
-            voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <h4 class="my-4 h4">Otros Productos</h4>
 
         </div>
         <!--Grid column-->

@@ -19,7 +19,7 @@ $(document).ready(function () {
                 '<a><div class="mask rgba-white-slight"></div></a>'+
                 '</div>'+
                 '<div class="card-body text-center">'+
-                '<h5><strong><a href="/pieza/'+respuesta[index].id+'" class="dark-grey-text">'+respuesta[index].nombre+'</a></strong></h5>'+
+                '<h5><strong><a href="/E-commerce/vistas/pieza.php?id='+respuesta[index].id+'" class="dark-grey-text">'+respuesta[index].nombre+'</a></strong></h5>'+
                 '<h5>'+respuesta[index].descripcion+'</h5'+
                 '<br>'+
                 '<h4 class="font-weight-bold blue-text"><strong>$'+respuesta[index].precio+'</strong></h4>'+
