@@ -16,7 +16,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="#" target="_blank">
+      <a class="navbar-brand waves-effect" href="/E-commerce/">
         <img class="logo" src="../img/logo/logo.png" width="50px">
       </a>
 
@@ -32,7 +32,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
+            <a class="nav-link waves-effect" href="/E-commerce/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>

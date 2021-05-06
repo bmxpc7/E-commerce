@@ -24,7 +24,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="#" target="_blank">
+      <a class="navbar-brand waves-effect" href="/E-commerce/">
         <img class="logo" src="../img/logo/logo.png" width="50px">
       </a>
 
@@ -40,7 +40,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
+            <a class="nav-link waves-effect" href="/E-commerce/">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -77,9 +77,19 @@
 <?php 
 require_once "../controladores/pieza.controlador.php";
 $id= htmlspecialchars($_GET["id"]);
-$mostrarPieza = new ControladorRegi();
-$mostrarPieza -> ctrCrearCliente();
-  
+$colores = array();
+$hex = array();
+$tallas = array();
+$mostrarPieza = ControladorPieza::ctrMostrarPieza($id);
+
+foreach ($mostrarPieza as $key => $value){
+  array_push($colores,$value["color"]);
+  array_push($tallas, $value["talla"]);
+  array_push($hex, $value["hexadecimal"]);
+}
+$coloresFinal = array_unique($colores);
+$tallasFinal = array_unique($tallas);
+$hexFinal = array_unique($hex);
 ?>
 
     <div class="container dark-grey-text mt-5">
@@ -90,7 +100,7 @@ $mostrarPieza -> ctrCrearCliente();
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/14.jpg" class="img-fluid" alt="">
+          <img src=<?php echo "../".$mostrarPieza[0]["foto"]?> class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -101,16 +111,37 @@ $mostrarPieza -> ctrCrearCliente();
           <!--Content-->
           <div class="p-4">
 
+          <h1><?php echo $mostrarPieza[0]["nombre"]?></h1>
             <p class="lead">
-              <span>$100</span>
+              <span>$<?php echo $mostrarPieza[0]["precio"]?></span>
             </p>
 
             <p class="lead font-weight-bold">Descripción</p>
 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolor suscipit libero eos atque quia ipsa
-              sint voluptatibus!
-              Beatae sit assumenda asperiores iure at maxime atque repellendus maiores quia sapiente.</p>
-
+            <p><?php echo $mostrarPieza[0]["descripcion"]?></p>
+            <h3>Colores Disponibles</h3>
+            <?php
+            for ($i=0; $i < count($coloresFinal); $i++) {
+            ?>
+            
+            <div class="inputColores" id=<?php echo $coloresFinal[$i]?> <?php echo 'style=" display: inline-block; border: 2px solid grey; border-radius: 50%;width: 50px; height:50px;background:'.$hexFinal[$i].'"'?>></div>
+            <?php
+            }?>
+            <hr>
+            <h3>Talla</h3>
+            <?php
+            for ($j=0; $j < count($tallasFinal)+2; $j++) {
+              if(isset($tallasFinal[$j])?$tallasFinal[$j]:null){
+                echo ' <div class="form-check-inline">'.
+                '<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">'.
+                '<label class="form-check-label" for="defaultCheck1">'.$tallasFinal[$j].'</label>'.
+                '</div>';
+              }
+            ?>
+            <?php
+            }
+            ?>
+<hr>
             <form class="d-flex justify-content-left">
               <!-- Default input -->
               <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">

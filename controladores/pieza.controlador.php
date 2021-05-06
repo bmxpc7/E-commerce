@@ -1,5 +1,5 @@
 <?php
-require_once "../modelos/registro.modelo.php";
+require_once "../modelos/pieza.modelo.php";
 class ControladorPieza{
     /*=============================================
 	MOSTRAR USUARIO
@@ -7,10 +7,8 @@ class ControladorPieza{
 
 	static public function ctrMostrarPieza($id){
 
-		$tabla = "pieza";
+		$respuesta = modeloPieza::mdlMostrarPieza($id);
 
-		$respuesta = modeloPieza::mdlMostrarPieza($tabla,$id);
-
-		echo json_encode($respuesta);
+		return $respuesta;
 	}
 }
