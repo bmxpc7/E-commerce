@@ -60,6 +60,7 @@
               <i class="fas fa-user btnIniciar"></i>
               <span class="clearfix d-none d-sm-inline-block" class="btnIniciar"> Iniciar Sesión </span>
             </a>
+            
           </li>
           <li class="nav-item btnIniciar">
             <a href="/E-commerce/vistas/perfil.php" class="nav-link waves-effect btnIniciar">
@@ -74,7 +75,6 @@
           </form>
         </ul>
       </div>
-
     </div>
   </nav>
   <!-- Navbar -->

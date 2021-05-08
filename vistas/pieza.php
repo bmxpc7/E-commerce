@@ -76,6 +76,8 @@
     
 <?php 
 require_once "../controladores/pieza.controlador.php";
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 $id= htmlspecialchars($_GET["id"]);
 $colores = array();
 $hex = array();

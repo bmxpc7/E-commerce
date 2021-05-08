@@ -16,7 +16,7 @@ $(document).ready(function () {
                 '<div class="card">'+
                 '<div class="view overlay">'+
                 '<img src="'+respuesta[index].foto+'" class="card-img-top">'+
-                '<a><div class="mask rgba-white-slight"></div></a>'+
+                '<a href="/E-commerce/vistas/pieza.php?id='+respuesta[index].id+'"><div class="mask rgba-white-slight"></div></a>'+
                 '</div>'+
                 '<div class="card-body text-center">'+
                 '<h5><strong><a href="/E-commerce/vistas/pieza.php?id='+respuesta[index].id+'" class="dark-grey-text">'+respuesta[index].nombre+'</a></strong></h5>'+
