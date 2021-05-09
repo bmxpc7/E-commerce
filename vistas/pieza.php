@@ -102,7 +102,7 @@ $hexFinal = array_unique($hex);
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src=<?php echo "../".$mostrarPieza[0]["foto"]?> class="img-fluid" alt="">
+          <img id="imgProducto" src=<?php echo "../".$mostrarPieza[0]["foto"]?> class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -123,20 +123,20 @@ $hexFinal = array_unique($hex);
             <p><?php echo $mostrarPieza[0]["descripcion"]?></p>
             <h3>Colores Disponibles</h3>
             <?php
-            for ($i=0; $i < count($coloresFinal); $i++) {
+            for ($i=0; $i < count($coloresFinal)+count($coloresFinal); $i++) {
+              if(array_key_exists($i,$coloresFinal)){
             ?>
-            
-            <div class="inputColores" id=<?php echo $coloresFinal[$i]?> <?php echo 'style=" display: inline-block; border: 2px solid grey; border-radius: 50%;width: 50px; height:50px;background:'.$hexFinal[$i].'"'?>></div>
+            <div><button class="inputColores" id=<?php echo $coloresFinal[$i]?> type="button" <?php echo 'style=" display: inline-block; border: 2px solid grey; border-radius: 50%;width: 50px; height:50px;background:'.$hexFinal[$i].'"'?> onclick="addColor(event)"></button></div>
             <?php
-            }?>
+            }}?>
             <hr>
             <h3>Talla</h3>
             <?php
             for ($j=0; $j < count($tallasFinal)+2; $j++) {
               if(isset($tallasFinal[$j])?$tallasFinal[$j]:null){
                 echo ' <div class="form-check-inline">'.
-                '<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">'.
-                '<label class="form-check-label" for="defaultCheck1">'.$tallasFinal[$j].'</label>'.
+                '<input class="form-check-input" type="checkbox" value="" id="'.$tallasFinal[$j].'">'.
+                '<label class="form-check-label" for="'.$tallasFinal[$j].'">'.$tallasFinal[$j].'</label>'.
                 '</div>';
               }
             ?>
@@ -147,7 +147,7 @@ $hexFinal = array_unique($hex);
             <form class="d-flex justify-content-left">
               <!-- Default input -->
               <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
-              <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+              <button class="btn btn-primary btn-md my-0 p" id="btnAgregarCarrito" type="button">Agregar al carrito
                 <i class="fas fa-shopping-cart ml-1"></i>
               </button>
 
@@ -225,7 +225,22 @@ $hexFinal = array_unique($hex);
 
   </footer>
   <!--/.Footer-->
-
+<!-- Modal -->
+<div class="modal fade" id="modalAfterCart" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Guardar en Carrito</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p>Hola Amigo</p>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
@@ -235,6 +250,7 @@ $hexFinal = array_unique($hex);
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="../js/mdb.min.js"></script>
+  <script type="text/javascript" src="../js/pieza.js"></script>
   <!-- Initializations -->
   <script type="text/javascript">
     // Animations initialization
