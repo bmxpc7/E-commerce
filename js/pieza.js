@@ -1,3 +1,4 @@
+var colores = {}
 $("#btnAgregarCarrito").click(function () { 
     var img = $("#imgProducto").attr("src");
 
@@ -6,5 +7,9 @@ $("#btnAgregarCarrito").click(function () {
 });
 
 const addColor =(e)=>{
-console.log(e.target);
+    colores = {
+        nombre: e.target.id,
+        hexa: e.target.style.background
+    }
+console.log(colores);
 }
