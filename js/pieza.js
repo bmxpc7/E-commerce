@@ -6,5 +6,5 @@ $("#btnAgregarCarrito").click(function () {
 });
 
 const addColor =(e)=>{
-console.log(e);
+console.log(e.target);
 }
