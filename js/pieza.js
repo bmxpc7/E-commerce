@@ -1,21 +1,15 @@
 var colores = [];
 var tallas = [];
-
+var coloresResult
 const addColor =(e)=>{
     colores.push(e.target.id);
-    var coloresResult = colores.filter((item,index)=>{
+    coloresResult = colores.filter((item,index)=>{
         return colores.indexOf(item) === index;
       })
-      console.log(coloresResult);
 }
 
 const addTalla =(e) => {
     console.log(e);
-    
-    // var tallasResult = tallas.filter((item,index)=>{
-    //     return tallas.indexOf(item) === index;
-    //   })
-
     if(e.target.checked==true){
         tallas.push(e.target.id);
     }else{
@@ -35,6 +29,8 @@ $("#btnAgregarCarrito").click(function () {
     '<div class="col-6">'+
     '<h1>'+nombre+'</h1>'+
     '<h3>'+precio+'</h3>'+
+    '<div>'+coloresResult+'</div>'+
+    '<div>'+tallas+'</div>'+
     '<button class="btn btn-success btnGuardar">Guardar en el Carrito</button>'+
     '</div>'+
     '</div>');
