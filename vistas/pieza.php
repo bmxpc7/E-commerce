@@ -113,14 +113,14 @@ $hexFinal = array_unique($hex);
           <!--Content-->
           <div class="p-4">
 
-          <h1><?php echo $mostrarPieza[0]["nombre"]?></h1>
+          <h1 id="nombrePieza"><?php echo $mostrarPieza[0]["nombre"]?></h1>
             <p class="lead">
-              <span>$<?php echo $mostrarPieza[0]["precio"]?></span>
+              <span id="precioPieza">$<?php echo $mostrarPieza[0]["precio"]?></span>
             </p>
 
-            <p class="lead font-weight-bold">Descripción</p>
+            <p class="lead font-weight-bold" >Descripción</p>
 
-            <p><?php echo $mostrarPieza[0]["descripcion"]?></p>
+            <p id="descripcionPieza"><?php echo $mostrarPieza[0]["descripcion"]?></p>
             <h3>Colores Disponibles</h3>
             <?php
             for ($i=0; $i < count($coloresFinal)+count($coloresFinal); $i++) {
@@ -134,8 +134,8 @@ $hexFinal = array_unique($hex);
             <?php
             for ($j=0; $j < count($tallasFinal)+2; $j++) {
               if(isset($tallasFinal[$j])?$tallasFinal[$j]:null){
-                echo ' <div class="form-check-inline">'.
-                '<input class="form-check-input" type="checkbox" value="" id="'.$tallasFinal[$j].'">'.
+                echo ' <div class="form-check-inline talla">'.
+                '<input class="form-check-input" type="checkbox" onchange="addTalla(event)" value="" id="'.$tallasFinal[$j].'">'.
                 '<label class="form-check-label" for="'.$tallasFinal[$j].'">'.$tallasFinal[$j].'</label>'.
                 '</div>';
               }
@@ -236,7 +236,6 @@ $hexFinal = array_unique($hex);
         </button>
       </div>
       <div class="modal-body">
-      <p>Hola Amigo</p>
       </div>
     </div>
   </div>
