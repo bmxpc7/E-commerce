@@ -8,10 +8,6 @@ error_reporting(E_ALL);
 
 class controladorInicio{
 
-	/*=============================================
-	MOSTRAR USUARIO
-	=============================================*/
-
 	static public function ctrMostrarPiezas(){
 
 		$tabla = "pieza";
