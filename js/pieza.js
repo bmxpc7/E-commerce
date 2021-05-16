@@ -32,9 +32,9 @@ $("#btnAgregarCarrito").click(function () {
     '<h1>'+nombre+'</h1>'+
     '<h3>'+precio+'</h3>'+
     '<div class="col-12 form-inline"">'+
-    '<div class="col-4"><div style="background: '+coloresResult[0].background+'; width: 50px;height: 50px;border-radius: 50%"></div></div>'+
-    '<div class="col-4"><div>'+tallas+'</div></div>'+
-    '<div class="col-4"><input type="number" class="form-control"></div>'+
+    '<div class="col-3"><div style="background: '+coloresResult[0].background+'; width: 50px;height: 50px;border-radius: 50%; margin-left: -60px;"></div></div>'+
+    '<div class="col-3"><div style="margin-left: -60px;">'+tallas+'</div></div>'+
+    '<div class="col-6"><input style="width: 40px; type="number" class="form-control"></div>'+
     '</div>'+
     '<button class="btn btn-success btnGuardar">Guardar en el Carrito</button>'+
     '</div>'+

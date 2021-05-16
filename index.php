@@ -18,7 +18,14 @@
 </head>
 <!-- Esto es solo un Comentario -->
 <body>
+<?php
+ini_set('display_errors', 1);
 
+ini_set('display_startup_errors', 1);
+
+error_reporting(E_ALL);
+
+?>
 <!-- Navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
     <div class="container">
@@ -50,9 +57,9 @@
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
             <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
+              <span class="badge orange z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+              <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
             </a>
           </li>
           <li class="nav-item btnIniciar">
@@ -86,6 +93,12 @@
         <div class="row contenidoPrincipal">
 
         </div>
+        <?php
+        var_dump($_SESSION["iniciarSesion"]);
+        if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"] == "ok"){
+          echo "Sesion Iniciada";
+         }
+        ?>
         <!--Grid row-->
     </div>
     
@@ -121,7 +134,7 @@
     <h3 for="txtPass">Contraseña</h3>
     <input type="password" class="form-control" id="txtPass">
   </div>
-  <button type="submit" class="btn btn-warning text-dark">Iniciar Sesión</button>
+  <button type="submit" class="btn btn-warning text-dark btnIniciarSesion">Iniciar Sesión</button>
   <hr>
   <p>¿No tienes cuenta? <a href="/E-commerce/vistas/registro.php" style="color:blue">Registrate</a></p>
         </form>

@@ -58,9 +58,9 @@
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
             <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 1 </span>
+            <span class="badge orange z-depth-1 mr-1"> 1 </span>
               <i class="fas fa-shopping-cart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+              <span class="clearfix d-none d-sm-inline-block"> Carrito </span>
             </a>
           </li>
         </ul>
@@ -269,7 +269,7 @@
 
           <!-- Heading -->
           <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Your cart</span>
+            <span class="text-muted">Mi Carrito</span>
             <span class="badge badge-secondary badge-pill">3</span>
           </h4>
 

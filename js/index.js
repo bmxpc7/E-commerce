@@ -2,7 +2,6 @@ $(document).ready(function () {
     var datos = new FormData();
 	datos.append("metodo", "mostrarPiezas");
     $.ajax({
-
 		url:"ajax/inicio.ajax.php",
 		method: "POST",
 		data: datos,
@@ -34,4 +33,28 @@ $(document).ready(function () {
 $(".btnIniciar").click(function () { 
     $('#modalLogin').modal('show');
     
+});
+
+
+$(".btnIniciarSesion").click(function (e) {
+    e.preventDefault();
+    var user = e.target.form[0].value;
+    var pass = e.target.form[1].value;
+    var dataLogin = new FormData();
+	dataLogin.append("metodo", "iniciarSesion");
+    dataLogin.append("user", user);
+    dataLogin.append("pass", pass);
+    console.log(dataLogin);
+    $.ajax({
+		url:"ajax/inicio.ajax.php",
+		method: "POST",
+		data: dataLogin,
+		cache: false,
+		contentType: false,
+		processData: false,
+		dataType: "json",
+		success: function(respuesta){
+            
+		}
+	});
 });
